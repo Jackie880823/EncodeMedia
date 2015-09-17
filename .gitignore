@@ -20,7 +20,10 @@ gen### Android template
 bin/
 gen/
 
+/app/src/main/obj
 # Gradle files
+**/*.so
+/app/src/androidTest
 .gradle/
 **/build/
 

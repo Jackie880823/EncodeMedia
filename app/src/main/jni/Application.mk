@@ -1,4 +1,4 @@
 # Build for arm only
-APP_ABI := armeabi
+APP_ABI := armeabi armeabi-v7a
 
-APP_PLATFORM := android-15
+APP_PLATFORM := android-16
