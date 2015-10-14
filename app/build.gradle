@@ -5,16 +5,11 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.jackie.endocdevideo"
+        applicationId "com.jackie.encodeMedia"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        ndk {
-            abiFilter "armeabi-v7a"
-            moduleName "ffmpeg"
-            ldLibs "log", "z", "m", "jnigraphics", "android"
-        }
     }
     buildTypes {
         release {
