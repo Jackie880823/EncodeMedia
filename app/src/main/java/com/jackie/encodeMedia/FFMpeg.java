@@ -17,7 +17,7 @@ public class FFmpeg {
         System.loadLibrary("postproc-53");
         System.loadLibrary("avfilter-5");
         System.loadLibrary("avdevice-56");
-        System.loadLibrary("sfftranscoder");
+        System.loadLibrary("ffmpeg_transformer");
     }
 
     public native int ffmpegcore(int argc,String[] argv);

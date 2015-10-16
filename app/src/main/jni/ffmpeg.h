@@ -48,6 +48,14 @@
 
 #include "libswresample/swresample.h"
 
+
+/*for android logs*/
+#include <android/log.h>
+
+#define LOG_TAG "FFMPEG transcode"
+#define LOGI(...) __android_log_print(4, LOG_TAG, __VA_ARGS__);
+#define LOGE(...) __android_log_print(6, LOG_TAG, __VA_ARGS__);
+
 #define VSYNC_AUTO       -1
 #define VSYNC_PASSTHROUGH 0
 #define VSYNC_CFR         1

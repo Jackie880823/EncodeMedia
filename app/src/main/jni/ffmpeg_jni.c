@@ -20,18 +20,8 @@
 
 #include <string.h>
 #include <jni.h>
-#include <ffmpeg.h>
+#include "ffmpeg.h"
 #include "com_jackie_encodeMedia_FFmpeg.h"
-
-#ifdef ANDROID
-#include <jni.h>
-#include <android/log.h>
-#define LOGE(format, ...)  __android_log_print(ANDROID_LOG_ERROR, "(>_<)", format, ##__VA_ARGS__)
-#define LOGI(format, ...)  __android_log_print(ANDROID_LOG_INFO,  "(^_^)", format, ##__VA_ARGS__)
-#else
-#define LOGE(format, ...)  printf("(>_<) " format "\n", ##__VA_ARGS__)
-#define LOGI(format, ...)  printf("(^_^) " format "\n", ##__VA_ARGS__)
-#endif
 
 
 int ffmpegmain(int argc, char **argv);
@@ -39,6 +29,8 @@ int ffmpegmain(int argc, char **argv);
 //Output FFmpeg's av_log()
 void custom_log(void *ptr, int level, const char* fmt, va_list vl){
 
+    LOGI("level: %d", level);
+    LOGI(fmt, vl);
 	//To TXT file
 
 	FILE *fp=fopen("/storage/emulated/0/av_log.txt","a+");

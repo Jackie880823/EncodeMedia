@@ -1,6 +1,6 @@
 # Android.mk for FFmpeg
 #
-# Lei Xiaohua À×Ïöæè
+# Lei Xiaohua ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 # leixiaohua1020@126.com
 # http://blog.csdn.net/leixiaohua1020
 # 
@@ -50,7 +50,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 
 # Program
 include $(CLEAR_VARS)
-LOCAL_MODULE := sfftranscoder
+LOCAL_MODULE := ffmpeg_transformer
 LOCAL_SRC_FILES :=ffmpeg_jni.c ffmpeg_mod.c ffmpeg_opt.c ffmpeg_filter.c cmdutils.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 LOCAL_LDLIBS := -llog -lz
