@@ -29,10 +29,32 @@ int ffmpegmain(int argc, char **argv);
 //Output FFmpeg's av_log()
 void custom_log(void *ptr, int level, const char* fmt, va_list vl){
 
-    LOGI("level: %d", level);
-    LOGI(fmt, vl);
-	//To TXT file
+    // print log by level
+    switch (level){
+        case AV_LOG_FATAL:
+        case AV_LOG_QUIET:
+        case AV_LOG_ERROR:
+            LOGE(fmt, vl);
+            break;
+        case AV_LOG_WARNING:
+            LOGW(fmt, vl);
+            break;
+        case AV_LOG_INFO:
+            LOGI(fmt, vl);
+            break;
+        case AV_LOG_VERBOSE:
+            LOGV(fmt, vl);
+            break;
+        case AV_LOG_DEBUG:
+            LOGD(fmt, vl);
+            break;
+        default:
+            LOGU(fmt, vl);
+            break;
+    }
 
+
+	//To TXT file
 	FILE *fp=fopen("/storage/emulated/0/av_log.txt","a+");
 	if(fp){
 		vfprintf(fp,fmt,vl);
